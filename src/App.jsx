@@ -33,7 +33,10 @@ function App() {
             <Tractor size={26} />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
               <span style={{ fontSize: '1.25rem' }}>HarvesterHub</span>
-              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--secondary-color)', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>by yerraudaykumar</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--secondary-color)' }}>by yerraudaykumar</span>
+                <span style={{ border: '1px solid #4caf50', color: '#4caf50', fontSize: '0.55rem', padding: '1px 4px', borderRadius: '4px', textTransform: 'uppercase', fontWeight: '900' }}>🛡️ Firewall Active</span>
+              </div>
             </div>
           </NavLink>
           <div className="flex gap-sm" style={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
@@ -56,8 +59,22 @@ function App() {
             {/* <Route path="/track" element={<TrackVehicle />} /> */}
           </Routes>
         </main>
-        <footer style={{ padding: '2rem 1rem', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '2rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-          <p>© 2026 HarvesterHub • Developed with ❤️ by <strong>yerraudaykumar</strong></p>
+        <footer style={{ padding: '3rem 1rem', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '2rem', background: 'white' }}>
+          <p style={{ margin: 0, fontWeight: '700', color: 'var(--text-main)', fontSize: '1.1rem' }}>Developed with ❤️ by yerraudaykumar</p>
+          <div className="flex justify-center gap-md" style={{ marginTop: '1rem', flexWrap: 'wrap' }}>
+            <a href="https://github.com/yerraudaykumar/tractor-booking-app" target="_blank" rel="noreferrer" style={{ fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-muted)' }}>
+              📦 Repository
+            </a>
+            <span style={{ color: '#ccc' }}>|</span>
+            <span style={{ fontSize: '0.85rem', color: '#2e7d32', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              🛡️ Firewall Protected
+            </span>
+            <span style={{ color: '#ccc' }}>|</span>
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              ⚡ Vercel Optimized
+            </span>
+          </div>
+          <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: '#999' }}>© 2026 HarvesterHub Professional Enterprise Edition</p>
         </footer>
       </div>
     </BrowserRouter>

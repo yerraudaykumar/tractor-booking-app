@@ -108,6 +108,31 @@ export default function OwnerDashboard() {
                 </div>
             </div>
 
+            {/* System Infrastructure Status */}
+            <div className="card glass" style={{ borderLeft: '4px solid #0288d1', background: '#f0faff', marginBottom: '1.5rem', boxShadow: '0 4px 20px rgba(2,136,209,0.08)' }}>
+                <h3 style={{ margin: '0 0 1rem', display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '1rem', color: '#01579b' }}>
+                    🌐 System Infrastructure Health
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1.5rem' }}>
+                    <div className="flex flex-col">
+                        <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: '#777', fontWeight: '800', letterSpacing: '0.5px' }}>GitHub Repository</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: '700', marginTop: '0.2rem' }}>📦 tractor-booking-app</span>
+                    </div>
+                    <div className="flex flex-col">
+                        <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: '#777', fontWeight: '800', letterSpacing: '0.5px' }}>Network Security</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: '700', color: '#2e7d32', marginTop: '0.2rem' }}>🛡️ Firewall Active</span>
+                    </div>
+                    <div className="flex flex-col">
+                        <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: '#777', fontWeight: '800', letterSpacing: '0.5px' }}>Global Edge</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: '700', marginTop: '0.2rem' }}>⚡ Vercel Deployment</span>
+                    </div>
+                    <div className="flex flex-col">
+                        <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', color: '#777', fontWeight: '800', letterSpacing: '0.5px' }}>Encryption</span>
+                        <span style={{ fontSize: '0.85rem', fontWeight: '700', color: '#2e7d32', marginTop: '0.2rem' }}>🔒 256-bit SSL</span>
+                    </div>
+                </div>
+            </div>
+
             {/* ─── MY EQUIPMENT ─── */}
             <div>
                 <div className="flex justify-between items-center" style={{ marginBottom: '1rem' }}>
