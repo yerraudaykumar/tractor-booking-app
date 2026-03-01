@@ -31,9 +31,9 @@ function App() {
         <nav className="navbar">
           <NavLink to="/" className="brand-logo" style={{ textDecoration: 'none' }}>
             <Tractor size={26} />
-            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-              <span>HarvesterHub</span>
-              <span style={{ fontSize: '0.65rem', fontWeight: '400', opacity: 0.8 }}>by yerraudaykumar</span>
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+              <span style={{ fontSize: '1.25rem' }}>HarvesterHub</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--secondary-color)', textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>by yerraudaykumar</span>
             </div>
           </NavLink>
           <div className="flex gap-sm" style={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
