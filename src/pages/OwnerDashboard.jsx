@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { DollarSign, CalendarCheck, Plus, X, ChevronDown, AlertCircle, CheckCircle, Camera, Image as ImageIcon, Tractor } from 'lucide-react';
+import { DollarSign, CalendarCheck, Plus, X, ChevronDown, AlertCircle, CheckCircle, Camera, Image as ImageIcon, Tractor, MessageCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const EQUIPMENT_TYPES = ['Tractor', 'Paddy Harvester', 'Maize Harvester', 'Sprayer', 'Seed Drill', 'Rotavator'];
 
@@ -17,6 +18,7 @@ const initialEquipment = [
 const emptyForm = { name: '', type: 'Tractor', power: '', priceHr: '', priceAcre: '', village: '', image: null };
 
 export default function OwnerDashboard() {
+    const navigate = useNavigate();
     const [requests, setRequests] = useState(initialRequests);
     const [equipmentList, setEquipmentList] = useState(initialEquipment);
     const [showForm, setShowForm] = useState(false);
@@ -282,6 +284,13 @@ export default function OwnerDashboard() {
                                             {req.status === 'Pending' ? (
                                                 <div className="flex gap-sm" style={{ justifyContent: 'flex-end' }}>
                                                     <button className="btn btn-primary" style={{ padding: '0.3rem 0.75rem', fontSize: '0.8rem' }} onClick={() => handleAccept(req.id)}>Accept</button>
+                                                    <button
+                                                        className="btn btn-outline"
+                                                        style={{ padding: '0.3rem 0.75rem', fontSize: '0.8rem', color: '#0288d1', borderColor: '#0288d1' }}
+                                                        onClick={() => navigate('/chat', { state: { equipmentName: req.equipment, ownerName: req.farmer, type: req.eqType } })}
+                                                    >
+                                                        <MessageCircle size={14} />
+                                                    </button>
                                                     <button className="btn btn-outline" style={{ padding: '0.3rem 0.75rem', fontSize: '0.8rem', color: '#c62828', borderColor: '#c62828' }} onClick={() => handleReject(req.id)}>Reject</button>
                                                 </div>
                                             ) : (

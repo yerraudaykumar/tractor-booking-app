@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Calendar, Clock, ChevronRight, Star, Tractor } from 'lucide-react';
+import { Tractor, Search, Filter, MapPin, Star, Calendar, Clock, Phone, ArrowLeft, MessageCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // Added for navigation
 
 const mockEquipment = [
     { id: 1, type: "Tractor", name: "Mahindra 575 DI", power: "45 HP", priceHr: 500, priceAcre: 1000, distance: "2.5 km", owner: "Ramesh K.", phone: "9848012345", rating: 4.8, reviewCount: 32, image: "https://images.unsplash.com/photo-1594488311306-029da6396e95?auto=format&fit=crop&q=80&w=400" },
@@ -116,7 +117,7 @@ export default function FarmerDashboard() {
                                         <div style={{ fontSize: '1.1rem', fontWeight: '700', color: 'var(--primary-color)' }}>
                                             ₹{item.priceAcre}<span style={{ fontSize: '0.8rem', fontWeight: '400', color: 'var(--text-muted)' }}>/ac</span>
                                         </div>
-                                        <ChevronRight size={18} color="var(--text-muted)" />
+                                        <ArrowLeft size={18} color="var(--text-muted)" style={{ transform: 'rotate(180deg)' }} /> {/* Changed ChevronRight to ArrowLeft rotated */}
                                     </div>
                                 </div>
                             </div>
@@ -129,6 +130,7 @@ export default function FarmerDashboard() {
 }
 
 function BookingFlow({ equipment, onBack }) {
+    const navigate = useNavigate(); // Initialize useNavigate hook
     // Acres-only types: Harvesters, Sprayers, Seed Drills
     const isHarvester = equipment.type.includes('Harvester') || equipment.type === 'Sprayer' || equipment.type === 'Seed Drill';
     const [step, setStep] = useState(1);
@@ -192,7 +194,13 @@ function BookingFlow({ equipment, onBack }) {
                         <p className="text-muted m-0" style={{ fontSize: '0.875rem' }}>by {equipment.owner} &bull; {equipment.distance}</p>
                         <div className="flex gap-sm" style={{ marginTop: '0.5rem' }}>
                             <a href={`tel:+91${equipment.phone}`} className="btn btn-outline" style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', textDecoration: 'none' }}>📞 Call</a>
-                            <a href={`https://wa.me/91${equipment.phone}?text=Hi, I want to book ${equipment.name}`} target="_blank" rel="noreferrer" className="btn" style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', background: '#25D366', color: 'white', textDecoration: 'none' }}>💬 WhatsApp</a>
+                            <button
+                                className="btn btn-outline"
+                                style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', color: '#0288d1', borderColor: '#0288d1' }}
+                                onClick={() => navigate('/chat', { state: { equipmentName: equipment.name, ownerName: equipment.owner, type: equipment.type } })}
+                            >
+                                <MessageCircle size={14} /> Message
+                            </button>
                         </div>
                     </div>
                     <div style={{ textAlign: 'right' }}>

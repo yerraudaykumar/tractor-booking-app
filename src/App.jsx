@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import { Tractor, User, Settings, MapPin, History, RefreshCcw } from 'lucide-react';
+import { Tractor, User, Settings, MapPin, History, RefreshCcw, MessageCircle } from 'lucide-react';
 import FarmerDashboard from './pages/FarmerDashboard';
 import OwnerDashboard from './pages/OwnerDashboard';
 import Login from './pages/Login';
@@ -8,6 +8,7 @@ import EquipmentMap from './pages/EquipmentMap';
 import BookingHistory from './pages/BookingHistory';
 import BookingHistory from './pages/BookingHistory';
 // import TrackVehicle from './pages/TrackVehicle';
+import Chat from './pages/Chat';
 
 const navLinkStyle = ({ isActive }) => ({
   display: 'inline-flex',
@@ -85,6 +86,13 @@ function App() {
             <NavLink to="/map" style={navLinkStyle}><MapPin size={16} /> Map</NavLink>
             <NavLink to="/history" style={navLinkStyle}><History size={16} /> Bookings</NavLink>
             <NavLink to="/history" style={navLinkStyle}><History size={16} /> Bookings</NavLink>
+            <NavLink to="/chat" style={navLinkStyle}>
+              <div style={{ position: 'relative' }}>
+                <MessageCircle size={16} />
+                <span style={{ position: 'absolute', top: '-4px', right: '-4px', width: '8px', height: '8px', background: 'var(--danger-color)', borderRadius: '50%', border: '1.5px solid white' }}></span>
+              </div>
+              Chat
+            </NavLink>
             <NavLink to="/farmer" style={navLinkStyle}><User size={16} /> Farmer</NavLink>
             <NavLink to="/owner" style={navLinkStyle}><Settings size={16} /> Owner</NavLink>
           </div>
@@ -97,7 +105,7 @@ function App() {
             <Route path="/owner/*" element={<OwnerDashboard />} />
             <Route path="/map" element={<EquipmentMap />} />
             <Route path="/history" element={<BookingHistory />} />
-            <Route path="/history" element={<BookingHistory />} />
+            <Route path="/chat" element={<Chat />} />
             {/* <Route path="/track" element={<TrackVehicle />} /> */}
           </Routes>
         </main>
