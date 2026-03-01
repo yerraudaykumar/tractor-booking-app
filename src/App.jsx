@@ -30,7 +30,10 @@ function App() {
         <nav className="navbar">
           <NavLink to="/" className="brand-logo" style={{ textDecoration: 'none' }}>
             <Tractor size={26} />
-            HarvesterHub
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+              <span>HarvesterHub</span>
+              <span style={{ fontSize: '0.65rem', fontWeight: '400', opacity: 0.8 }}>by yerraudaykumar</span>
+            </div>
           </NavLink>
           <div className="flex gap-sm" style={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
             <NavLink to="/map" style={navLinkStyle}><MapPin size={16} /> Map</NavLink>

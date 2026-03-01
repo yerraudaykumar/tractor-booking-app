@@ -63,6 +63,7 @@ export default function Login() {
                         <Tractor size={44} />
                     </div>
                     <h2 style={{ margin: 0 }}>HarvesterHub</h2>
+                    <p style={{ margin: '-0.4rem 0 0.5rem', fontSize: '0.8rem', color: 'var(--primary-color)', fontWeight: '600' }}>by yerraudaykumar</p>
                     <p className="text-muted" style={{ textAlign: 'center', maxWidth: '280px' }}>
                         {step === 'phone' && 'Enter your mobile number to receive an OTP'}
                         {step === 'otp' && `OTP sent to +91-${phone}`}

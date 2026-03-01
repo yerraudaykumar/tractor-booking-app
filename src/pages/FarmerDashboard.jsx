@@ -30,8 +30,15 @@ export default function FarmerDashboard() {
 
     return (
         <div className="container flex flex-col gap-lg">
+            <div className="card glass" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                    <h2 style={{ margin: 0 }}>Find Equipment & Harvesters</h2>
+                    <p className="text-muted" style={{ margin: 0 }}>Welcome back, <strong>yerraudaykumar</strong> 👋</p>
+                </div>
+                <div style={{ textAlign: 'right', display: 'none' }}>{/* Hide on mobile if needed */}</div>
+            </div>
+
             <div className="card glass">
-                <h2>Find Equipment & Harvesters</h2>
 
                 <div className="flex gap-sm" style={{ marginTop: '1rem', overflowX: 'auto', paddingBottom: '0.75rem', scrollbarWidth: 'none' }}>
                     {categories.map(cat => {
@@ -180,7 +187,8 @@ function BookingFlow({ equipment, onBack }) {
                 <div className="flex justify-between items-center border-b" style={{ paddingBottom: '1rem', borderBottom: '1px solid var(--border-color)', marginTop: '0.5rem' }}>
                     <div>
                         <div style={{ fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--text-muted)', textTransform: 'uppercase' }}>{equipment.type}</div>
-                        <h2 style={{ margin: 0 }}>{equipment.name}</h2>
+                        <h2 style={{ margin: 0 }}>HarvesterHub</h2>
+                        <p style={{ margin: '-0.4rem 0 0.5rem', fontSize: '0.8rem', color: 'var(--primary-color)', fontWeight: '600' }}>by yerraudaykumar</p>
                         <p className="text-muted m-0" style={{ fontSize: '0.875rem' }}>by {equipment.owner} &bull; {equipment.distance}</p>
                         <div className="flex gap-sm" style={{ marginTop: '0.5rem' }}>
                             <a href={`tel:+91${equipment.phone}`} className="btn btn-outline" style={{ padding: '0.3rem 0.8rem', fontSize: '0.8rem', textDecoration: 'none' }}>📞 Call</a>

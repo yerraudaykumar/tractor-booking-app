@@ -69,6 +69,12 @@ export default function OwnerDashboard() {
 
     return (
         <div className="container flex flex-col gap-lg" style={{ marginTop: '1.5rem' }}>
+            <div className="card glass" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                    <h2 style={{ margin: 0 }}>Owner Control Center</h2>
+                    <p className="text-muted" style={{ margin: 0 }}>Managing as <strong>yerraudaykumar</strong> 👋</p>
+                </div>
+            </div>
 
             {/* Success toast */}
             {saved && (
