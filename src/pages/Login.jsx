@@ -62,7 +62,7 @@ export default function Login() {
                     <div style={{ background: 'linear-gradient(135deg, var(--primary-color), #43a047)', color: 'white', padding: '1.2rem', borderRadius: '50%', boxShadow: '0 4px 16px rgba(46,125,50,0.3)' }}>
                         <Tractor size={44} />
                     </div>
-                    <h2 style={{ margin: 0 }}>HarvesterHub</h2>
+                    <h2 style={{ margin: 0 }}>FarmSetu</h2>
                     <p style={{ margin: '-0.3rem 0 0.8rem', fontSize: '1rem', color: 'var(--secondary-hover)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px' }}>Created by yerraudaykumar</p>
                     <p className="text-muted" style={{ textAlign: 'center', maxWidth: '280px' }}>
                         {step === 'phone' && 'Enter your mobile number to receive an OTP'}

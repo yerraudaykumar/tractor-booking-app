@@ -1,8 +1,8 @@
-# 🚜 HarvesterHub — Professional Farm Equipment Marketplace
+# 🚜 FarmSetu — Professional Farm Equipment Marketplace
 
-HarvesterHub is a premium, state-of-the-art platform connecting farmers with local equipment owners. It solves the critical problem of finding, booking, and tracking harvesting machinery in real-time.
+FarmSetu is a premium, state-of-the-art platform connecting farmers with local equipment owners. It solves the critical problem of finding, booking, and tracking harvesting machinery in real-time.
 
-![HarvesterHub Banner](https://images.unsplash.com/photo-1594488311306-029da6396e95?auto=format&fit=crop&q=80&w=1200)
+![FarmSetu Banner](https://images.unsplash.com/photo-1594488311306-029da6396e95?auto=format&fit=crop&q=80&w=1200)
 
 ## 🌟 Key Features
 

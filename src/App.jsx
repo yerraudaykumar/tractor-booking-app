@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import { Tractor, User, Settings, MapPin, History } from 'lucide-react';
+import { Tractor, User, Settings, MapPin, History, RefreshCcw } from 'lucide-react';
 import FarmerDashboard from './pages/FarmerDashboard';
 import OwnerDashboard from './pages/OwnerDashboard';
 import Login from './pages/Login';
@@ -25,21 +25,63 @@ const navLinkStyle = ({ isActive }) => ({
 });
 
 function App() {
+  const [isLoding, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  useEffect(() => {
+    // Initial Splash Screen
+    const timer = setTimeout(() => setIsLoading(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+    setTimeout(() => setIsRefreshing(false), 2000);
+  };
+
+  if (isLoding) {
+    return (
+      <div className="splash-screen">
+        <div className="splash-logo">
+          <Tractor size={120} color="var(--primary-color)" />
+        </div>
+        <h1 className="splash-text">FARMSETU</h1>
+        <p style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Connecting Agriculture...</p>
+      </div>
+    );
+  }
+
   return (
     <BrowserRouter>
+      {isRefreshing && (
+        <div className="refresh-overlay">
+          <div className="tractor-loader">
+            <Tractor size={80} color="var(--primary-color)" />
+            <p style={{ textAlign: 'center', fontWeight: 'bold', color: 'var(--primary-color)', marginTop: '1rem' }}>Syncing Farm Data...</p>
+          </div>
+        </div>
+      )}
       <div className="app-wrapper">
         <nav className="navbar">
           <NavLink to="/" className="brand-logo" style={{ textDecoration: 'none' }}>
             <Tractor size={26} />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
-              <span style={{ fontSize: '1.25rem' }}>HarvesterHub</span>
+              <span style={{ fontSize: '1.25rem' }}>FarmSetu</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                 <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--secondary-color)' }}>by yerraudaykumar</span>
                 <span style={{ border: '1px solid #4caf50', color: '#4caf50', fontSize: '0.55rem', padding: '1px 4px', borderRadius: '4px', textTransform: 'uppercase', fontWeight: '900' }}>🛡️ Firewall Active</span>
               </div>
             </div>
           </NavLink>
-          <div className="flex gap-sm" style={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+          <div className="flex gap-sm" style={{ flexWrap: 'wrap', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <button
+              onClick={handleRefresh}
+              className="btn btn-outline"
+              style={{ padding: '0.4rem', borderRadius: '50%', width: '36px', height: '36px', border: '1px solid var(--border-color)' }}
+              title="Refresh Data"
+            >
+              <RefreshCcw size={16} style={{ animation: isRefreshing ? 'spin 1s linear infinite' : 'none' }} />
+            </button>
             <NavLink to="/map" style={navLinkStyle}><MapPin size={16} /> Map</NavLink>
             <NavLink to="/history" style={navLinkStyle}><History size={16} /> Bookings</NavLink>
             <NavLink to="/history" style={navLinkStyle}><History size={16} /> Bookings</NavLink>
@@ -74,7 +116,7 @@ function App() {
               ⚡ Vercel Optimized
             </span>
           </div>
-          <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: '#999' }}>© 2026 HarvesterHub Professional Enterprise Edition</p>
+          <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: '#999' }}>© 2026 FarmSetu Professional Enterprise Edition</p>
         </footer>
       </div>
     </BrowserRouter>
