@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import { Tractor, User, Settings, MapPin, History, Navigation } from 'lucide-react';
+import { Tractor, User, Settings, MapPin, History } from 'lucide-react';
 import FarmerDashboard from './pages/FarmerDashboard';
 import OwnerDashboard from './pages/OwnerDashboard';
 import Login from './pages/Login';
 import EquipmentMap from './pages/EquipmentMap';
 import BookingHistory from './pages/BookingHistory';
-import TrackVehicle from './pages/TrackVehicle';
+import BookingHistory from './pages/BookingHistory';
+// import TrackVehicle from './pages/TrackVehicle';
 
 const navLinkStyle = ({ isActive }) => ({
   display: 'inline-flex',
@@ -38,7 +39,7 @@ function App() {
           <div className="flex gap-sm" style={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
             <NavLink to="/map" style={navLinkStyle}><MapPin size={16} /> Map</NavLink>
             <NavLink to="/history" style={navLinkStyle}><History size={16} /> Bookings</NavLink>
-            <NavLink to="/track" style={navLinkStyle}><Navigation size={16} /> Track</NavLink>
+            <NavLink to="/history" style={navLinkStyle}><History size={16} /> Bookings</NavLink>
             <NavLink to="/farmer" style={navLinkStyle}><User size={16} /> Farmer</NavLink>
             <NavLink to="/owner" style={navLinkStyle}><Settings size={16} /> Owner</NavLink>
           </div>
@@ -51,7 +52,8 @@ function App() {
             <Route path="/owner/*" element={<OwnerDashboard />} />
             <Route path="/map" element={<EquipmentMap />} />
             <Route path="/history" element={<BookingHistory />} />
-            <Route path="/track" element={<TrackVehicle />} />
+            <Route path="/history" element={<BookingHistory />} />
+            {/* <Route path="/track" element={<TrackVehicle />} /> */}
           </Routes>
         </main>
         <footer style={{ padding: '2rem 1rem', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '2rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>

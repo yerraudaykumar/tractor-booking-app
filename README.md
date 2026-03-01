@@ -8,7 +8,6 @@ HarvesterHub is a premium, state-of-the-art platform connecting farmers with loc
 
 ### 🚜 For Farmers
 - **Interactive Equipment Map**: Real-time GPS location of nearby tractors, harvesters, and sprayers using Leaflet.js.
-- **Live Vehicle Tracking**: Track your booked equipment with accurate ETA and KM distance updates using the Haversine formula.
 - **Visual Search**: Search results with **Live Machinery Photos** captured by owners.
 - **Flexible Booking**: Book by land area (Acres) or time (Hours).
 - **Ratings & Reviews**: Share feedback to build community trust.

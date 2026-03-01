@@ -313,8 +313,8 @@ function BookingFlow({ equipment, onBack }) {
 
                         {paymentMethod === 'cash' ? (
                             <button className="btn btn-primary w-full" onClick={() => {
-                                if (window.confirm('✅ Booking Confirmed!\n\nPay cash to the owner on arrival.\n\nClick OK to track your vehicle in real-time.')) {
-                                    window.location.href = '/track';
+                                if (window.confirm('✅ Booking Confirmed!\n\nPay cash to the owner on arrival.')) {
+                                    onBack();
                                 } else {
                                     onBack();
                                 }
@@ -327,9 +327,6 @@ function BookingFlow({ equipment, onBack }) {
                             </button>
                         )}
 
-                        <a href="/track" style={{ display: 'block', textAlign: 'center', color: 'var(--primary-color)', fontSize: '0.875rem', fontWeight: '600', textDecoration: 'none', padding: '0.5rem', borderRadius: 'var(--radius-sm)', border: '1px dashed var(--primary-color)' }}>
-                            🚜 Already booked? Track your vehicle →
-                        </a>
                     </div>
                 )}
             </div>
