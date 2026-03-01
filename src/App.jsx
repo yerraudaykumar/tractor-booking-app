@@ -51,6 +51,9 @@ function App() {
             <Route path="/track" element={<TrackVehicle />} />
           </Routes>
         </main>
+        <footer style={{ padding: '2rem 1rem', textAlign: 'center', borderTop: '1px solid var(--border-color)', marginTop: '2rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
+          <p>© 2026 HarvesterHub • Developed with ❤️ by <strong>yerraudaykumar</strong></p>
+        </footer>
       </div>
     </BrowserRouter>
   );

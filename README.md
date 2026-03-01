@@ -1,16 +1,49 @@
-# React + Vite
+# 🚜 HarvesterHub — Professional Farm Equipment Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HarvesterHub is a premium, state-of-the-art platform connecting farmers with local equipment owners. It solves the critical problem of finding, booking, and tracking harvesting machinery in real-time.
 
-Currently, two official plugins are available:
+![HarvesterHub Banner](https://images.unsplash.com/photo-1594488311306-029da6396e95?auto=format&fit=crop&q=80&w=1200)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Key Features
 
-## React Compiler
+### 🚜 For Farmers
+- **Interactive Equipment Map**: Real-time GPS location of nearby tractors, harvesters, and sprayers using Leaflet.js.
+- **Live Vehicle Tracking**: Track your booked equipment with accurate ETA and KM distance updates using the Haversine formula.
+- **Visual Search**: Search results with **Live Machinery Photos** captured by owners.
+- **Flexible Booking**: Book by land area (Acres) or time (Hours).
+- **Ratings & Reviews**: Share feedback to build community trust.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 💰 For Owners
+- **Live Image Capture**: Capture and upload real machinery photos directly from your mobile camera.
+- **Fleet Management**: Manually set pricing per acre/hour and update machinery specs.
+- **Earnings Dashboard**: Track your requests, active bookings, and monthly revenue.
+- **Instant Alerts**: Manage booking requests with "Urgent Harvest" priority flags.
 
-## Expanding the ESLint configuration
+### 🛡️ Professional Foundation
+- **Mock OTP System**: A realistic mobile authentication flow that works instantly without external dependencies.
+- **Premium UI/UX**: Built with React, Lucide Icons, and custom CSS animations. Featuring custom scrollbars and smooth bubble-based role selection.
+- **Geocoding Integration**: Real-world address labels for all GPS coordinates.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technology Stack
+- **Frontend**: React.js / Vite
+- **Styling**: Vanilla CSS (Premium Custom Design System)
+- **Icons**: Lucide React
+- **Mapping**: Leaflet.js / OpenStreetMap API
+- **Utilities**: Haversine Formula for Geolocation accuracy
+
+## 🚀 Getting Started
+
+No Firebase or external database setup is required to run this professional prototype.
+
+1. **Clone the Repo**
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Run Development Server**:
+   ```bash
+   npm run dev
+   ```
+
+---
+✨ **Developed with precision by [yerraudaykumar](https://github.com/yerraudaykumar) for the modern agricultural ecosystem.**
